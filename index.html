@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html ng-app>
+        <head>
+                <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>toDO $http</title>
+				
+				<link rel="stylesheet" type="text/css" href="style.css">	
+				
+				
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+				<script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+				
+				<script type="text/javascript" src="todo.js"></script>
+				
+				<style type="text/css">
+					html{
+						color:black;
+					}
+				</style>
+        </head>        
+
+        <body>
+			
+			<div class="container">
+				<h1 style="text-align: center;margin-bottom: 10px;font-size: 35px;">toDo..</h>
+				
+				<div class="row">
+					
+					<div class="center">
+						
+
+						<div ng-controller="todoCtl">
+							<ul class="unstyled">
+								<li ng-repeat = "todo in todos">
+									
+									<input type="checkbox" ng-model="todo.done"><span class="done-{{todo.done}}">{{todo.text}}</span>
+									 <br>
+									<!--  <span>{{todo.description}}</span> -->
+									
+								</li>
+							</ul>
+							<ul >
+							Done:
+								<li ng-repeat="todo in dones">
+								{{todo.text}}
+								</li>
+							</ul>
+							<form class="frm">
+							<input type="text" class="form-control" name="" placeholder="title" ng-model="todoT" ng-model-instant>
+							<input type="text" class="form-control" name="" placeholder="description" ng-model="tdescription" ng-model-instant>
+							<button class="btn-success btn-small" ng-click="addTodo() ">Go!</button>
+							<button class="btn-success btn-small" ng-click="clear()">Remove!</button>
+							<button class="btn-success btn-small" ng-click="complete()">Complete</button>
+							</form>
+							
+						</div>
+						
+
+					</div>
+					
+				</div>
+			
+				
+			</div>
+			
+			
+			</div>
+			
+
+	    </body>
+		
+		
+</html>
+
